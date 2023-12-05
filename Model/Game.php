@@ -6,16 +6,21 @@ class Game extends Product
     // public $suffix = "/header.jpg";
     // protected $id;
     // protected $title;
+
     public function __construct($id, $title, $quantity, $price)
     {
         parent::__construct($price, $quantity, $id, $title);
+
     }
     public function printCard()
     {
+        $prefix = "https://cdn.cloudflare.steamstatic.com/steam/apps/";
+        $suffix = "/header.jpg";
         $id = $this->id;
         $title = $this->title;
         $quantity = $this->quantity;
         $price = $this->price;
+        $img = $prefix . $id . $suffix;
         include __DIR__ . "/../Views/card.php";
     }
 
@@ -32,6 +37,5 @@ class Game extends Product
         return $games;
     }
 }
-
 
 ?>

@@ -1,9 +1,9 @@
 <div class="col-12 col-md-3 col-lg-4">
     <div class="my-card">
         <div class="img-container">
-            <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/<?= $id ?>/header.jpg" alt="">
+            <img src="<?= $img ?>" alt="<?= $title ?>">
         </div>
-        <div class="my-tetx">
+        <div class="my-text">
             <p>
                 <?= $title ?>
             </p>
