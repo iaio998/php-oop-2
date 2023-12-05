@@ -1,16 +1,22 @@
 <?php
-class Game
+include __DIR__ . "/Product.php";
+class Game extends Product
 {
     // public $prefix = "https://cdn.cloudflare.steamstatic.com/steam/apps/";
-
     // public $suffix = "/header.jpg";
-    private $id;
-    private $title;
-    function __construct($id, $title)
+    // protected $id;
+    // protected $title;
+    public function __construct($id, $title, $quantity, $price)
     {
-        $this->id = $id;
-        $this->title = $title;
-
+        parent::__construct($price, $quantity, $id, $title);
+    }
+    public function printCard()
+    {
+        $id = $this->id;
+        $title = $this->title;
+        $quantity = $this->quantity;
+        $price = $this->price;
+        include __DIR__ . "/../Views/card.php";
     }
 
     public static function fetchAll()
@@ -19,7 +25,9 @@ class Game
         $gamesList = json_decode($gamesString, true);
         $games = [];
         foreach ($gamesList as $item) {
-            $games[] = new Game($item['appid'], $item['name']);
+            $quantity = rand(0, 100);
+            $price = rand(10, 100);
+            $games[] = new Game($item['appid'], $item['name'], $quantity, $price);
         }
         return $games;
     }

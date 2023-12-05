@@ -27,5 +27,17 @@
     <header>
         <div class="container">
             <h1>OOP SHOP</h1>
+            <ul>
+                <li>
+                    <a href="index.php">Home</a>
+                </li>
+                <li>
+                    <a href="games.php">Games</a>
+                </li>
+                <li>
+                    <a href="books.php">Books</a>
+                </li>
+            </ul>
         </div>
+
     </header>
