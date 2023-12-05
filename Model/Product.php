@@ -1,5 +1,6 @@
 <?php
-class Product
+include __DIR__ . "/Game.php";
+class Product extends Game
 {
     private $id;
     private $title;
@@ -18,13 +19,12 @@ class Product
     }
     public static function fetchAll()
     {
-        $gamesString = file_get_contents(__DIR__ . '/steam_db.json');
-        $gamesList = json_decode($gamesString, true);
-        $games = [];
-        foreach ($gamesList as $item) {
-            $games[] = new Product($item['appid'], $item['name']);
+        $games = Game::fetchAll();
+        $products = [];
+        foreach ($games as $item) {
+            $products[] = new Product($item[$item->id], $item['name']);
         }
-        return $games;
+
     }
 }
 ?>
