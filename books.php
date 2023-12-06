@@ -9,7 +9,7 @@ $prod = Book::fetchAll();
         <section>Books</section>
         <div class="row justify-content-center">
             <?php foreach($prod as $item) {
-                $item->printCard();
+                $item->printCard($item->formatCard());
             } ?>
         </div>
     </div>

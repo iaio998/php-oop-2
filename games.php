@@ -1,6 +1,6 @@
 <?php
-include __DIR__ . "/Views/header.php";
-include __DIR__ . "/Model/Game.php";
+include __DIR__."/Views/header.php";
+include __DIR__."/Model/Game.php";
 $prod = Game::fetchAll();
 ?>
 
@@ -8,13 +8,13 @@ $prod = Game::fetchAll();
     <div class="container">
         <section>Games</section>
         <div class="row justify-content-center">
-            <?php foreach ($prod as $item) {
-                $item->printCard();
+            <?php foreach($prod as $item) {
+                $item->printCard($item->formatCard());
             } ?>
         </div>
     </div>
 </main>
 
 <?php
-include __DIR__ . "/Views/footer.php";
+include __DIR__."/Views/footer.php";
 ?>
