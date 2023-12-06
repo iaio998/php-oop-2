@@ -22,19 +22,19 @@
     <title>OOP 2</title>
 </head>
 
-<body>
+<body class="bg-secondary-subtle">
 
     <header>
-        <div class="container">
-            <h1>OOP SHOP</h1>
-            <ul>
-                <li>
+        <div class="container bg-warning-subtle d-flex align-items-center">
+            <h1 class="fw-bold fst-italic">OOP SHOP</h1>
+            <ul class="d-flex align-items-center m-0 gap-3">
+                <li class="fs-5">
                     <a href="index.php">Home</a>
                 </li>
-                <li>
+                <li class="fs-5">
                     <a href="games.php">Games</a>
                 </li>
-                <li>
+                <li class="fs-5">
                     <a href="books.php">Books</a>
                 </li>
             </ul>
